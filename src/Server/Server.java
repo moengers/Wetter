@@ -10,16 +10,27 @@ public class Server extends Thread{
     private final int PORT;
     private ServerSocket server;
 
+    /**
+     * constructor
+     * @param port offener Port für die Clients
+     * @throws IOException InetAddress.getLocalHost()
+     */
     Server (int port) throws IOException {
         PORT = port;
         this.server = new ServerSocket(PORT, 1, InetAddress.getLocalHost());
 
     }
 
+    /**
+     * startet den Thread
+     */
     public void run(){
         serverSetup();
     }
 
+    /**
+     * startet den TCP Server
+     */
     private void serverSetup() {
         String data;
         Socket client = null;
@@ -47,6 +58,11 @@ public class Server extends Thread{
 
     }
 
+    /**
+     * in Unterklassen zu implementierende Methoden, die den Input verabreitet
+     * @param data Die vom Client geschickten Daten
+     * @param clientAddress Adresse des Clients
+     */
     protected void doSomething(String data, String clientAddress){
         System.out.println("DoSomething");
     }

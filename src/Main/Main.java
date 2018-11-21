@@ -6,8 +6,13 @@ import Server.*;
 
 import java.io.IOException;
 
+
 public class Main {
 
+    /**
+     * Probe Echo-Server
+     * @param args Standard Main
+     */
     public static void main(String[] args) {
         EchoServer server = null;
         try {
