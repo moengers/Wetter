@@ -1,0 +1,5 @@
+# ignore IDE
+.idea/
+
+# ignore all logs
+*.log
